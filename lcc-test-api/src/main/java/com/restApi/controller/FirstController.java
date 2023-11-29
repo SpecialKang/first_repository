@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.restApi.service.FirstService;
-import com.restApi.service.firstService;
 
 import lombok.RequiredArgsConstructor;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -20,13 +20,13 @@ import lombok.RequiredArgsConstructor;
 public class FirstController {
 
 	
-	//private final FirstService firstService;
+	private final FirstService firstService;
 	
 	@GetMapping("/postTest")
 	public Map<String, Object> postTest() {
-		//return firstService.getFirstData();
-		return null;
+		return firstService.getFirstData();
 	}
+	
 	/*
 	@PostMapping("/test")
 	private Map<String, Object> getPostTest(@RequestBody Map<String, Object> requestMap) throws Exception {
