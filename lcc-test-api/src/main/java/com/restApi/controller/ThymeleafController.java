@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 //value : localhost:8080/posts로 접근할 경우 이 controller에 접근한다.
 //produces : 생산 가능한 미디어 타입을 지정해서 일치할 때만 요청을 매칭함. (매핑 제한용)
 //comsumes : 소비 가능한 미디어 타입을 지정해서 때만 요청을 매칭함. (매핑 제한용)
-//@RequestMapping(value = "/posts", produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(value = "/thymeleaf", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/thymeleaf")
 public class ThymeleafController {
 	
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String index() {
 		return "index";
 	}
