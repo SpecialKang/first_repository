@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,23 +18,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/thymeleaf")
 public class ThymeleafController {
 	
-	@RequestMapping("/index")
+	@GetMapping("/index")
 	public String index() {
 		return "index";
 	}
 	
-	
-	/*
-	//글 목록 조회
-	@GetMapping(value = "/")
-	public String getPostList(@RequestParam(value = "postId", required = false) Long postId, Model model){
-	    List<Post> posts= postRepository.findAll();
-	    model.addAttribute("posts", posts);
-	    return "index";
+	@GetMapping("/login")
+	public String loginForm() {
+	    return "/thymeleaf/login";
+	}
+
+	@PostMapping("/login")
+	public String login(@RequestParam("username") String username,@RequestParam("password") String password) {
+	    return "redirect:/";		    // 로그인 처리
 	}
 	
 	
+	//글 목록 조회
+	@GetMapping(value = "/test")
+	public String getPostList(@RequestParam(value = "postId", required = false) Long postId, Model model){
+	   // List<Post> posts= postRepository.findAll();
+	    //model.addAttribute("posts", posts);
+	    return "/thymeleaf/test";
+	}
 	
+	
+	/*
 	@GetMapping(value = "/add-post-page")
     public String getAddPostPage(@RequestParam(value = "state", required = false, defaultValue = "create")String state,
                                  @RequestParam(value = "postId", required = false) Long postId, Model model){

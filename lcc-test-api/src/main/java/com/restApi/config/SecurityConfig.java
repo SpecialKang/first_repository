@@ -24,7 +24,8 @@ public class SecurityConfig {
             .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
             	.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
             	.requestMatchers(new AntPathRequestMatcher("/api/**")).permitAll()
-            	//.requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
+            	.requestMatchers(new AntPathRequestMatcher("/thymeleaf/**")).permitAll()
+            	.requestMatchers(new AntPathRequestMatcher("/css/**")).permitAll()
             	.anyRequest().authenticated()
             )
             .csrf((csrf) -> csrf
@@ -42,6 +43,8 @@ public class SecurityConfig {
         ;
         return http.build();
     }
+	
+	
 	/*
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
