@@ -23,6 +23,11 @@ public class ThymeleafController {
 		return "index";
 	}
 	
+	@GetMapping("/login2")
+	public String loginForm2() {
+		return "/thymeleaf/login2";
+	}
+	
 	@GetMapping("/login")
 	public String loginForm() {
 	    return "/thymeleaf/login";

@@ -1,31 +1,52 @@
-body {
-    font-family: sans-serif;
+* { padding: 0; margin: 0; }
+
+html, body {
+  height: 100%;
+  background: #ffffff;
 }
 
-.container {
-    width: 500px;
-    margin: 0 auto;
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.header {
-    text-align: center;
+#loginBox {
+  width: 300px;
+  text-align: center;
+  background-color: #ffffff;
+}
+.input-form-box {
+  border: 0px solid #ff0000;
+  display: flex;
+  margin-bottom: 5px;
+}
+.input-form-box > span {
+  display: block;
+  text-align: left;
+  padding-top: 5px;
+  min-width: 65px;
+}
+.button-login-box {
+  margin: 10px 0;
+}
+#loginBoxTitle {
+  color:#000000;
+  font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #270a09, #8ca6ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#inputBox {
+  margin: 10px;
 }
 
-.content {
-    margin-top: 20px;
-}
-
-input {
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.submit {
-    width: 100px;
-    height: 40px;
-    background-color: #000;
-    color: #fff;
-    border-radius: 5px;
+#inputBox button {
+  padding: 3px 5px;
 }
