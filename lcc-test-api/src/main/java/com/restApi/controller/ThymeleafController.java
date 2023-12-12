@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 //value : localhost:8080/posts로 접근할 경우 이 controller에 접근한다.
@@ -47,6 +50,14 @@ public class ThymeleafController {
 	    return "/thymeleaf/test";
 	}
 	
+	
+	@GetMapping(value = "/test2")
+	public ModelAndView consultHistory(HttpServletRequest request, @RequestParam Map<String, Object> requestMap) throws Exception {
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("thymeleaf/test2");
+		return model;
+	}
 	
 	/*
 	@GetMapping(value = "/add-post-page")
